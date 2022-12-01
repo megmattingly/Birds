@@ -63,6 +63,20 @@ step "generate-database-delta-report" {
     }
 }
 
+step "approve-database-delta-script" {
+    name = "Approve Database Delta Script"
+
+    action {
+        action_type = "Octopus.Manual"
+        properties = {
+            Octopus.Action.Manual.BlockConcurrentDeployments = "False"
+            Octopus.Action.Manual.Instructions = "Please approve the database delta script found in the artifacts section."
+            Octopus.Action.Manual.ResponsibleTeamIds = "dbas,global/octopus-managers"
+        }
+        worker_pool_variable = ""
+    }
+}
+
 step "deploy-trident-web" {
     name = "Deploy Trident Website"
     properties = {
