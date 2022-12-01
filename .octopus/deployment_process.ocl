@@ -25,7 +25,7 @@ step "create-trident-database" {
 }
 
 step "generate-database-delta-report" {
-    name = "Generate Database Delta Report."
+    name = "Generate Database Delta Report"
 
     action {
         action_type = "Octopus.Script"
