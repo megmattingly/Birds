@@ -56,3 +56,7 @@ variable "Octopus.ServiceNow.ChangeRequest.Number" {
         }
     }
 }
+
+variable "Project.Database.Report.Path" {
+    value "C:\\DatabaseReports\\#{Octopus.Environment.Name}" {}
+}
